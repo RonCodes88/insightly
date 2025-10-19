@@ -1,6 +1,6 @@
 # insightly
 authors: Ronald Li, Adarsh Mallya
-## description of question and research topic (5 Sentences):
+## description of question and research topic:
 
 Today, with the rise of e-commerce, there is a vast number of products available. Customers often struggle to quickly understand the true quality of a product because numeric ratings can be inconsistent and reviews are unstructured. This makes it difficult to identify products that genuinely meet their needs. Machine learning can help by automatically analyzing review text to predict sentiment and assign meaningful ratings. Such insights allow shoppers to make informed decisions faster and provide sellers with actionable feedback to improve their products.
 

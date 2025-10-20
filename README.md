@@ -58,3 +58,14 @@ The first model we will use is a Naive Bayes model, which uses the assumption th
 
 The second model we will use is a standard Recurrent Neural Network (RNN) to analyze e-commerce product reviews for sentiment classification. RNNs are designed to handle sequential data, making them suitable for processing text where word order matters. Each review will be tokenized, converted into sequences, and padded to a fixed length before feeding into the RNN. The model will output a prediction for each review as Positive or Negative, and optionally assign a numeric rating based on confidence scores. We will evaluate the model using accuracy, precision, recall, and F1-score to ensure reliable predictions on unseen reviews.
 
+
+## project timeline
+
+The project will be completed over a 6-week timeframe. The tentative timeline is as follows:
+	•	Week 1: data collection and preprocessing
+	•	Week 2: baseline model development
+	•	Week 3: baseline model testing + optimization
+	•	Week 4: RNN model development
+	•	Week 5: RNN model testing + optimization
+	•	Week 6: full-stack website development for hosting model
+

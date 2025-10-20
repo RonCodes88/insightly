@@ -62,6 +62,7 @@ The second model we will use is a standard Recurrent Neural Network (RNN) to ana
 ## project timeline
 
 The project will be completed over a 6-week timeframe. The tentative timeline is as follows:
+
 	•	Week 1: data collection and preprocessing  
 	•	Week 2: baseline model development  
 	•	Week 3: baseline model testing + optimization  

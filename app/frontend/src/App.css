@@ -1,0 +1,232 @@
+.app-shell {
+  min-height: 100vh;
+  padding: clamp(1.5rem, 2.5vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-card {
+  width: min(960px, 100%);
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 32px;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.card-header {
+  text-align: left;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eyebrow-color);
+  margin: 0 0 0.5rem;
+}
+
+.card-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--heading-color);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.review-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.review-form textarea {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  padding: 1.25rem 1.5rem;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 180px;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.review-form textarea:disabled {
+  opacity: 0.7;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sample-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sample-chips button {
+  border: 1px dashed rgba(15, 23, 42, 0.25);
+  background: rgba(15, 23, 42, 0.03);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+.sample-chips button:hover:not(:disabled) {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.primary {
+  margin-left: auto;
+  background: var(--accent-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 15px 30px rgba(14, 116, 144, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 35px rgba(14, 116, 144, 0.45);
+}
+
+.primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.prediction-panel {
+  background: rgba(248, 250, 252, 0.9);
+  border-radius: 24px;
+  padding: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prediction-message {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.prediction-message.error {
+  color: var(--error-color);
+  font-weight: 600;
+}
+
+.prediction-result {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rating-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rating-value {
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.rating-scale {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-left: 0.35rem;
+}
+
+.rating-description {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.confidence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.confidence-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.confidence-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 720px) {
+  .app-card {
+    border-radius: 24px;
+    padding: 1.5rem;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary {
+    width: 100%;
+    margin-left: 0;
+  }
+}

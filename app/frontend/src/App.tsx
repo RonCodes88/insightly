@@ -6,6 +6,13 @@ type Prediction = {
   confidence: number
 }
 
+type ModelOption = 'naive_bayes' | 'rnn'
+
+const MODEL_OPTIONS: Array<{ label: string; value: ModelOption }> = [
+  { label: 'Naive Bayes', value: 'naive_bayes' },
+  { label: 'RNN', value: 'rnn' },
+]
+
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value))
 
@@ -38,6 +45,7 @@ const normalizeConfidence = (value: unknown) => {
 
 function App() {
   const [reviewText, setReviewText] = useState('')
+  const [selectedModel, setSelectedModel] = useState<ModelOption>('naive_bayes')
   const [prediction, setPrediction] = useState<Prediction | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -82,6 +90,7 @@ function App() {
         },
         body: JSON.stringify({
           review_text: reviewText.trim(),
+          model: selectedModel,
         }),
       })
 
@@ -95,6 +104,7 @@ function App() {
       const rating =
         normalizeRating(data.rating) ??
         normalizeRating(data.predicted_rating) ??
+        normalizeRating(data.predicted_score) ??
         normalizeRating(data.score) ??
         normalizeRating(data.prediction)
 
@@ -150,6 +160,22 @@ function App() {
             disabled={isLoading}
             rows={7}
           />
+
+          <div className="model-selector">
+            <label htmlFor="modelSelect">Select model</label>
+            <select
+              id="modelSelect"
+              value={selectedModel}
+              onChange={(event) => setSelectedModel(event.target.value as ModelOption)}
+              disabled={isLoading}
+            >
+              {MODEL_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
 
           <div className="form-footer">
             <div className="sample-chips" aria-label="Sample reviews">
